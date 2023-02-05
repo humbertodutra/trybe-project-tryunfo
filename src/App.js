@@ -18,7 +18,6 @@ class App extends React.Component {
       hasTrunfo: false,
       isSaveButtonDisabled: true,
       addCards: [],
-      filtredCards: [],
     };
     this.onInputChange = this.onInputChange.bind(this);
     this.validateForm = this.validateForm.bind(this);
@@ -70,18 +69,6 @@ class App extends React.Component {
     this.setState({ [name]: value }, () => this.validateForm());
   }
 
-  handleFilterChange = (event) => {
-    const selectedOption = event.target.value;
-    let newcards = []
-    const { addCards, filtredCards } = this.state;
-    if (selectedOption === 'all') {
-      newcards = addCards;
-    } else {
-      newcards = addCards.filter((card) => card.cardRare === selectedOption);
-    }
-    this.setState({ filtredCards: newcards });
-  }
-
   validateForm() {
     const min = 0;
     const max = 90;
@@ -109,38 +96,39 @@ class App extends React.Component {
 
   render() {
     const { cardName, cardDescription, cardImage, cardAttr1, cardAttr2, cardAttr3,
-      cardRare, cardTrunfo, hasTrunfo, isSaveButtonDisabled, addCards, filtredCards } = this.state;
+      cardRare, cardTrunfo, hasTrunfo,
+      isSaveButtonDisabled, addCards } = this.state;
     return (
       <main>
         <div className="firstDiv">
           <div className="formDiv">
             <Form
-              cardName={cardName}
-              onInputChange={this.onInputChange}
-              cardImage={cardImage}
-              cardAttr1={cardAttr1}
-              cardAttr2={cardAttr2}
-              cardAttr3={cardAttr3}
-              cardRare={cardRare}
-              cardTrunfo={cardTrunfo}
-              hasTrunfo={hasTrunfo}
-              isSaveButtonDisabled={isSaveButtonDisabled}
-              onSaveButtonClick={this.onSaveButtonClick}
-              cardDescription={cardDescription}
+              cardName={ cardName }
+              onInputChange={ this.onInputChange }
+              cardImage={ cardImage }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+              hasTrunfo={ hasTrunfo }
+              isSaveButtonDisabled={ isSaveButtonDisabled }
+              onSaveButtonClick={ this.onSaveButtonClick }
+              cardDescription={ cardDescription }
             />
           </div>
           <div className="previewDiv">
             <h1 className="previewh1">Card Preview</h1>
             <Card
-              cardName={cardName}
-              cardDescription={cardDescription}
-              cardImage={cardImage}
-              cardAttr1={cardAttr1}
-              cardAttr2={cardAttr2}
-              cardAttr3={cardAttr3}
-              cardRare={cardRare}
-              cardTrunfo={cardTrunfo}
-              hasTrunfo={hasTrunfo}
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardImage={ cardImage }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+              hasTrunfo={ hasTrunfo }
             />
           </div>
         </div>
@@ -148,8 +136,8 @@ class App extends React.Component {
           <h1 className="savedCardsh1">Saved Cards</h1>
           <div className="savedCardsDiv">
             {addCards.map((el) => (
-              <div key={el.cardName}>
-                <Card {...el} />
+              <div key={ el.cardName }>
+                <Card { ...el } />
               </div>
             ))}
           </div>

@@ -8,33 +8,44 @@ class Card extends Component {
     } = this.props;
 
     return (
-      
-      <div className="card">
-          
-          <p className="card-name" data-testid="name-card">
-            { cardName }
-          </p>
-          <br />
-          <img className="card-image" data-testid="image-card" src={ cardImage } alt={ cardName } />
-          <br />
-          <p className="card-description" data-testid="description-card">
-            { cardDescription }
-          </p>
-          <ol className="card-attributes">
-            <li className="card-attribute" data-testid="attr1-card">
-                Resistence { cardAttr1 }
-            </li>
-            <li className="card-attribute" data-testid="attr2-card">
-                Speed { cardAttr2 }
-            </li>
-            <li className="card-attribute" data-testid="attr3-card">
-                Strength { cardAttr3 }
-            </li>
-          </ol>
-          <div className="card-rare" data-testid="rare-card">{ cardRare }</div>
-          { cardTrunfo === true && <div className="card-trunfo" data-testid="trunfo-card"> Super Trunfo </div> }
-        </div>
 
+      <div className="card">
+
+        <p className="card-name" data-testid="name-card">
+          { cardName }
+        </p>
+        <br />
+        <img
+          className="card-image"
+          data-testid="image-card"
+          src={ cardImage }
+          alt={ cardName }
+        />
+        <br />
+        <p className="card-description" data-testid="description-card">
+          { cardDescription }
+        </p>
+        <ol className="card-attributes">
+          <li className="card-attribute" data-testid="attr1-card">
+            Resistence
+            {' '}
+            { cardAttr1 }
+          </li>
+          <li className="card-attribute" data-testid="attr2-card">
+            Speed
+            {' '}
+            { cardAttr2 }
+          </li>
+          <li className="card-attribute" data-testid="attr3-card">
+            Strength
+            {' '}
+            { cardAttr3 }
+          </li>
+        </ol>
+        <div className="card-rare" data-testid="rare-card">{ cardRare }</div>
+        { cardTrunfo === true
+          && <div className="card-trunfo" data-testid="trunfo-card"> Super Trunfo </div> }
+      </div>
 
     );
   }

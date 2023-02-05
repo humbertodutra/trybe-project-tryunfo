@@ -36,9 +36,9 @@ class Form extends Component {
           </label>
         </fieldset>
         <fieldset>
-          <p> min = 0, max = 90. Sum Max = 210</p>
+          <p>min = 0 max = 90 Sum = 210</p>
           <label htmlFor="attr01">
-            <strong>Resistence Max 50</strong>
+            <strong>Resistence</strong>
             <input
               id="atrr01"
               name="cardAttr1"
