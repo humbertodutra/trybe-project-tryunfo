@@ -115,32 +115,32 @@ class App extends React.Component {
         <div className="firstDiv">
           <div className="formDiv">
             <Form
-              cardName={ cardName }
-              onInputChange={ this.onInputChange }
-              cardImage={ cardImage }
-              cardAttr1={ cardAttr1 }
-              cardAttr2={ cardAttr2 }
-              cardAttr3={ cardAttr3 }
-              cardRare={ cardRare }
-              cardTrunfo={ cardTrunfo }
-              hasTrunfo={ hasTrunfo }
-              isSaveButtonDisabled={ isSaveButtonDisabled }
-              onSaveButtonClick={ this.onSaveButtonClick }
-              cardDescription={ cardDescription }
+              cardName={cardName}
+              onInputChange={this.onInputChange}
+              cardImage={cardImage}
+              cardAttr1={cardAttr1}
+              cardAttr2={cardAttr2}
+              cardAttr3={cardAttr3}
+              cardRare={cardRare}
+              cardTrunfo={cardTrunfo}
+              hasTrunfo={hasTrunfo}
+              isSaveButtonDisabled={isSaveButtonDisabled}
+              onSaveButtonClick={this.onSaveButtonClick}
+              cardDescription={cardDescription}
             />
           </div>
           <div className="previewDiv">
             <h1 className="previewh1">Card Preview</h1>
             <Card
-              cardName={ cardName }
-              cardDescription={ cardDescription }
-              cardImage={ cardImage }
-              cardAttr1={ cardAttr1 }
-              cardAttr2={ cardAttr2 }
-              cardAttr3={ cardAttr3 }
-              cardRare={ cardRare }
-              cardTrunfo={ cardTrunfo }
-              hasTrunfo={ hasTrunfo }
+              cardName={cardName}
+              cardDescription={cardDescription}
+              cardImage={cardImage}
+              cardAttr1={cardAttr1}
+              cardAttr2={cardAttr2}
+              cardAttr3={cardAttr3}
+              cardRare={cardRare}
+              cardTrunfo={cardTrunfo}
+              hasTrunfo={hasTrunfo}
             />
           </div>
         </div>
@@ -148,8 +148,8 @@ class App extends React.Component {
           <h1 className="savedCardsh1">Saved Cards</h1>
           <div className="savedCardsDiv">
             {addCards.map((el) => (
-              <div key={ el.cardName }>
-                <Card { ...el } />
+              <div key={el.cardName}>
+                <Card {...el} />
               </div>
             ))}
           </div>
